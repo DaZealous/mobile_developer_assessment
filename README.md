@@ -2,45 +2,32 @@
 
 Irecharge mobile team assessment
 
-## Getting Started
+## Packages used for development
 
-This project is a starting point for the mobile team assessment flutter application.
+This project uses few packages to provide standard and optimized code
 
-A few instructions before you start the ssessment:
+#Getx for: 
 
-- Clone this repositiory
-- Create your own repository and push your code to it
-- Submit a link to your repository when you are done
+- State Management
+- Depending Injection
+- Navigation and Routing
 
-## Assessment Question:
+#Sqflite for:
 
-XYZ inc. is interested in automating its processes and has a project for you to work on. At the end of every year, employees are given a productivity score which affexts their status with the company:
+- Local database cache
 
-- 100 – 80 : A promotion and consequential pay increase
-- 79 – 50 : No change
-- 49 – 40 : A demotion
-- 39 and below : Termination
+#Shimmer for:
 
-You have been assigned to build mobile system that primarily handles this for the people at XYZ inc. They do, however have a few secondary requirements which are:
+- Beautiful UI skeleton loader
 
-- The list of employees can be retrieved from Api.successResponse and should be displayed on the home screen as wll as saved in a local database
-- The employees can be filtered by name, designation or level
-- When an employee is tapped, their employee details where their employment status and new salary can be determined
-  - Level 0 = 70,000
-  - Level 1 – 100,000,
-  - Level 2 – 120,000,
-  - Level 3 – 180,000,
-  - Level 4 – 200,000
-  - Level 5 – 250,000
-- Simulate an error response from Api.errorResponse on the home page
-- A level 0 employee cannot be demoted, only terminated if need be.
+#flutter_test & test package for:
 
-# Bonus:
-- Proper state management
-- Adaptive user interface
-- Widget tests
-- Declarative navigation
-- Reusability of elements
+- Widgets Testing
+- Integration Testing
+- Unit Testing
 
 
-## Best of luck!
+#Link to apk
+
+https://drive.google.com/file/d/1Gd468CvYTSPBJmmFB9SPliANwqUC72BC/view?usp=sharing
+
