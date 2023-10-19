@@ -4,7 +4,7 @@ class Employee {
   String? lastName;
   String? designation;
   int? level;
-  int? productivityScore;
+  double? productivityScore;
   String? currentSalary;
   int? employmentStatus;
 
@@ -24,7 +24,7 @@ class Employee {
     lastName = json['last_name'] ?? '';
     designation = json['designation'] ?? '';
     level = json['level'] ?? 0;
-    productivityScore = json['productivity_score'] ?? 0;
+    productivityScore = json['productivity_score'] ?? 0.0;
     currentSalary = json['current_salary'] ?? '';
     employmentStatus = json['employment_status'] ?? 0;
   }

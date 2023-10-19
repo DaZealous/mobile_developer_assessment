@@ -8,11 +8,11 @@ class SplashController extends GetxController {
     super.onReady();
   }
 
-  /// the function waits for 2 seconds before routing to
+  /// this function waits for 2 seconds before routing to
   /// the home page screen
   void _performRouting() {
-    Future.delayed(const Duration(seconds: 2)).whenComplete(() {
-      Get.toNamed(AppRoutes.splashScreen);
+    Future.delayed(const Duration(seconds: 3), () {
+      Get.offNamed(AppRoutes.homeScreen);
     });
   }
 }

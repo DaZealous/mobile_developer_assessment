@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 
 class CustomTextField extends StatelessWidget {
   final String hintText;
-  final String labelText;
   final Widget? suffix;
   final bool isPassword;
   final Key? textFieldKey;
@@ -22,7 +21,6 @@ class CustomTextField extends StatelessWidget {
     Key? key,
     this.textFieldKey,
     required this.hintText,
-    required this.labelText,
     this.suffixIcon,
     this.suffix,
     this.keyboardType,
@@ -59,7 +57,6 @@ class CustomTextField extends StatelessWidget {
               keyboardType: keyboardType,
               readOnly: readOnly,
               decoration: InputDecoration(
-                labelText: labelText,
                 suffix: suffix,
                 suffixIcon: suffixIcon,
                 disabledBorder: UnderlineInputBorder(
@@ -79,26 +76,37 @@ class CustomTextField extends StatelessWidget {
               validator: validator,
               onSaved: onSaved,
               onChanged: onChanged,
-              style: const TextStyle(color: Colors.black, fontSize: 14),
+              style: Theme.of(context)
+                  .textTheme
+                  .bodySmall
+                  ?.copyWith(color: Colors.black),
               cursorColor: Theme.of(context).primaryColor,
               maxLines: isPassword ? 1 : maxLines,
               maxLength: maxLength,
               keyboardType: keyboardType ?? TextInputType.text,
               readOnly: readOnly,
               decoration: InputDecoration(
-                labelText: labelText,
-                floatingLabelStyle:
-                    TextStyle(color: Theme.of(context).primaryColor),
-                suffix: suffix,
-                suffixIcon: suffixIcon,
-                focusedBorder: UnderlineInputBorder(
-                    borderSide:
-                        BorderSide(color: Theme.of(context).primaryColor)),
-                disabledBorder: const UnderlineInputBorder(
-                    borderSide: BorderSide(color: Colors.grey)),
-                enabledBorder: const UnderlineInputBorder(
-                    borderSide: BorderSide(color: Colors.black)),
-              ),
+                  floatingLabelStyle:
+                      TextStyle(color: Theme.of(context).primaryColor),
+                  hintText: hintText,
+                  hintStyle: Theme.of(context)
+                      .textTheme
+                      .bodySmall
+                      ?.copyWith(color: Colors.black),
+                  suffix: suffix,
+                  suffixIcon: suffixIcon,
+                  filled: true,
+                  fillColor: Colors.white,
+                  border: const OutlineInputBorder(
+                      borderRadius: BorderRadius.all(Radius.circular(10)))
+                  // focusedBorder: UnderlineInputBorder(
+                  //     borderSide:
+                  //         BorderSide(color: Theme.of(context).primaryColor)),
+                  // disabledBorder: const UnderlineInputBorder(
+                  //     borderSide: BorderSide(color: Colors.grey)),
+                  // enabledBorder: const UnderlineInputBorder(
+                  //     borderSide: BorderSide(color: Colors.black)),
+                  ),
             ),
     );
   }
