@@ -27,16 +27,6 @@ class Api{
     "errors": null,
     "data": [
       {
-        "id" : 86,
-        "first_name" : "Adewale",
-        "last_name": "Oseni",
-        "designation": "Software Engineer",
-        "level": 5,
-        "productivity_score": 45.0,
-        "current_salary": "250,000",
-        "employment_status": 1
-      },
-      {
         "id" : 66,
         "first_name" : "Jonathan",
         "last_name": "Strange",

@@ -5,7 +5,6 @@ import 'package:mobile_assessment/core/models/employee.dart';
 class EmployeeController extends GetxController {
   Color getEmploymentStatusColor(int level, double productivityScore) {
     if (level == 0) {
-      // Level 0 employees cannot be demoted, only terminated if need be
       if (productivityScore >= 80.0) {
         return Colors.green;
       } else if (productivityScore <= 39.0) {
@@ -36,7 +35,7 @@ class EmployeeController extends GetxController {
       if (productivityScore >= 80.0) {
         return 'Promoted';
       } else if (productivityScore <= 39.0) {
-        return 'Termination';
+        return 'Terminated';
       } else {
         return 'No Change';
       }

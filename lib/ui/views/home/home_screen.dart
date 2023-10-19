@@ -62,13 +62,25 @@ class HomeScreen extends GetWidget<HomeScreenController> {
   }
 
   Widget _buildErrorWidget(String? error) {
-    return Column(
-      children: [
-        Text(
-          '${error ?? ''}\nClick to refresh',
-          textAlign: TextAlign.center,
-        )
-      ],
+    return Center(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Text(
+            '${error ?? ''}\nClick to refresh',
+            textAlign: TextAlign.center,
+          ),
+          const SizedBox(
+            height: 5,
+          ),
+          IconButton(
+              onPressed: () {
+                controller.fetchEmployeeLists();
+              },
+              icon: const Icon(Icons.refresh)),
+        ],
+      ),
     );
   }
 }

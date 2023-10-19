@@ -9,7 +9,7 @@ Future<void> main() async {
 
   runZonedGuarded(() async {
     SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
-    runApp(const MobileAssessmentApp(isDebug: true,));
+    runApp(const MobileAssessmentApp(isDebug: false,));
   }, (exception, stackTrace) async {
   });
 }
