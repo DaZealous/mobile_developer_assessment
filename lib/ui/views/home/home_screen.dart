@@ -31,9 +31,12 @@ class HomeScreen extends GetWidget<HomeScreenController> {
             onTapDown: (TapDownDetails details) {
               controller.showPopupMenu(details.globalPosition);
             },
-            child: const Padding(
-              padding: EdgeInsets.only(right: 20.0),
-              child: Icon(Icons.filter_list),
+            child: Padding(
+              padding: const EdgeInsets.only(right: 20.0),
+              child: Icon(
+                Icons.filter_list,
+                color: Theme.of(context).scaffoldBackgroundColor,
+              ),
             ),
           )
         ],
