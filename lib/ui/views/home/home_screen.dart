@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:mobile_assessment/core/models/employee.dart';
+import 'package:mobile_assessment/ui/widgets/app_widgets.dart';
 import 'package:mobile_assessment/ui/widgets/app_yextfield.dart';
 import 'package:mobile_assessment/ui/widgets/employee_item.dart';
 import 'home_screen_controller.dart';
@@ -13,10 +14,29 @@ class HomeScreen extends GetWidget<HomeScreenController> {
     return Scaffold(
       appBar: AppBar(
         toolbarHeight: 100,
-        title: const Center(
-            child: CustomTextField(
-          hintText: 'Search by name, level',
-        )),
+        title: Center(
+          child: Obx(
+            () {
+              return CustomTextField(
+                hintText: 'Search by ${controller.filterBy.value}',
+                onChanged: (String? text) {
+                  controller.filterEmployee(text!);
+                },
+              );
+            },
+          ),
+        ),
+        actions: [
+          GestureDetector(
+            onTapDown: (TapDownDetails details) {
+              controller.showPopupMenu(details.globalPosition);
+            },
+            child: const Padding(
+              padding: EdgeInsets.only(right: 20.0),
+              child: Icon(Icons.filter_list),
+            ),
+          )
+        ],
       ),
       body: Padding(
         padding: const EdgeInsets.all(10.0),
@@ -31,7 +51,7 @@ class HomeScreen extends GetWidget<HomeScreenController> {
             },
             itemCount: employees!.length,
           ),
-          // onLoading: buildTransactionLoader(10),
+          onLoading: buildTransactionLoader(10),
           onError: _buildErrorWidget,
         ),
       ),

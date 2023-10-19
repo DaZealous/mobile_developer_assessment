@@ -1,6 +1,8 @@
 class AppConstants {
   AppConstants._();
 
+  static List<String> filterKeywords = ['Name', 'Designation', 'Level'];
+
   static String getInitials(String name) {
     try {
       var names = name.split(' ');

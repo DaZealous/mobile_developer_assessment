@@ -78,8 +78,7 @@ class CustomTextField extends StatelessWidget {
               onChanged: onChanged,
               style: Theme.of(context)
                   .textTheme
-                  .bodySmall
-                  ?.copyWith(color: Colors.black),
+                  .bodySmall,
               cursorColor: Theme.of(context).primaryColor,
               maxLines: isPassword ? 1 : maxLines,
               maxLength: maxLength,
@@ -91,13 +90,13 @@ class CustomTextField extends StatelessWidget {
                   hintText: hintText,
                   hintStyle: Theme.of(context)
                       .textTheme
-                      .bodySmall
-                      ?.copyWith(color: Colors.black),
+                      .bodySmall,
                   suffix: suffix,
                   suffixIcon: suffixIcon,
                   filled: true,
-                  fillColor: Colors.white,
+                  fillColor: Theme.of(context).scaffoldBackgroundColor,
                   border: const OutlineInputBorder(
+                    borderSide: BorderSide.none,
                       borderRadius: BorderRadius.all(Radius.circular(10)))
                   // focusedBorder: UnderlineInputBorder(
                   //     borderSide:
