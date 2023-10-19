@@ -9,7 +9,7 @@ This project uses few packages to provide standard and optimized code
 ### Getx for: 
 
 - State Management
-- Depending Injection
+- Dependency Injection
 - Navigation and Routing
 
 ### Sqflite for:
